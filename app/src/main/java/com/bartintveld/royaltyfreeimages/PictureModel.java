@@ -24,8 +24,6 @@ public class PictureModel extends AsyncTask<String, Void, String> {
 
     private PicturesAvailable listener = null;
 
-    private static final String TAG = "AsyncSpotify";
-
     public PictureModel(PicturesAvailable listener) {
         this.listener = listener;
     }
