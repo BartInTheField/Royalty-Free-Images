@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Royalty Free Images</string>
+    <string name="info_title">Royalty Free Images Information</string>
+    <string name="info_text">In this app you can search for a royalty free images by typing in what you are searching for.\n \n
+    To save the image in your gallery: hold the image and click save.\n \n
+        Images powered by Pixabay. \n \n
+    App created by Bart in t Veld. \n \n
+        Feel free to donate and I will make sure that more awesome apps will be coming (◕‿◕)"</string>
+    <string name="title_activity_detailed">DetailedActivity</string>
+
+    <string name="negative">Cancel</string>
+    <string name="neutral">Pixabay</string>
+    <string name="positive">Donate</string>
+    <string name="donate_link">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XAHBQX4Y98CFC</string>
+
+    <string name="bart_easter">Bartaveld</string>
+</resources>
