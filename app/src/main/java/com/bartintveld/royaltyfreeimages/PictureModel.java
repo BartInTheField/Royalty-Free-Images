@@ -1,6 +1,7 @@
 package com.bartintveld.royaltyfreeimages;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -89,22 +90,22 @@ public class PictureModel extends AsyncTask<String, Void, String> {
             JSONObject jsonObject = new JSONObject(result);
 
             // Getting all albums and start looping
-            JSONArray hits = jsonObject.getJSONArray("hits");
+            JSONArray hits = jsonObject.optJSONArray("hits");
 
             ArrayList<Picture> pictures = new ArrayList<>();
 
             for (int idx = 0; idx < hits.length(); idx++) {
 
                 //Array level objects and albums
-                JSONObject hit = hits.getJSONObject(idx);
+                JSONObject hit = hits.optJSONObject(idx);
 
                 // Get albumName, albumID
-                String pictureName = hit.getString("tags");
-                String creator = hit.getString("user");
+                String pictureName = hit.optString("tags");
+                String creator = hit.optString("user");
 
                 //Get image urls.
-                String imageThumbURL = hit.getString("previewURL");
-                String imageURL = hit.getString("webformatURL");
+                String imageThumbURL = hit.optString("previewURL");
+                String imageURL = hit.optString("webformatURL");
 
                 //Create new Picture
                 Picture s = new Picture(pictureName, imageURL, imageThumbURL, creator);
@@ -117,8 +118,7 @@ public class PictureModel extends AsyncTask<String, Void, String> {
             //Callback
             listener.pictureAvailable(pictures);
         } catch (JSONException ex) {
-            //Log.e(TAG, "onPostExecute JSONException " + ex.getLocalizedMessage());
-
+            Log.e("JSONEXEXECPTION", "onPostExecute JSONException " + ex.getLocalizedMessage());
         }
 
 

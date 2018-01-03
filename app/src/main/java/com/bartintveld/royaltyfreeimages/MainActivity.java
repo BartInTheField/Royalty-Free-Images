@@ -23,6 +23,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 
 import static android.app.ActivityOptions.makeSceneTransitionAnimation;
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements
     private ArrayList<Picture> spotifys = new ArrayList<Picture>();
     private ListView listView;
     private TextView textView;
+    private AdView mAdView;
     private PictureAdapter arrayAdapter;
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MobileAds.initialize(this,"ca-app-pub-6428622231744693~4022860947");
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -82,6 +88,10 @@ public class MainActivity extends AppCompatActivity implements
                 }
             }
         });
+
+        mAdView = ( AdView ) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override

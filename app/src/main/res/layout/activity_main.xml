@@ -11,56 +11,104 @@
     tools:context=".MainActivity"
     android:background="@color/colorPrimary">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryLight"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:layout_height="match_parent"
+        android:layout_weight="8">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="8"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/adView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+        </FrameLayout>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_weight="8"
+            android:background="@color/colorPrimaryLight"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:orientation="vertical">
+            app:layout_constraintBottom_toTopOf="@+id/adView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:orientation="horizontal">
+
                 <EditText
                     android:id="@+id/editText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="8"
                     android:layout_gravity="center"
-                    android:textColor="@android:color/white"
+                    android:layout_weight="8"
                     android:backgroundTint="@android:color/white"
-                    android:textCursorDrawable="@null"
                     android:hint="Type tags for image search.."
-                    android:inputType="textCapWords"
                     android:imeOptions="actionSearch"
-                    android:lines="1"/>
+                    android:inputType="textCapWords"
+                    android:lines="1"
+                    android:textColor="@android:color/white"
+                    android:textCursorDrawable="@null" />
+
                 <Button
                     android:id="@+id/button"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_weight="1"
-                    android:padding="8dp"
                     android:layout_gravity="center"
-                    android:onClick="searchArtist"
+                    android:layout_weight="1"
                     android:background="@drawable/ic_search"
-                    android:textColor="@android:color/white"/>
+                    android:onClick="searchArtist"
+                    android:padding="8dp"
+                    android:textColor="@android:color/white" />
             </LinearLayout>
 
             <TextView
@@ -68,17 +116,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white" />
+
             <ListView
+                android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/listView"/>
+                android:layout_height="match_parent" />
+
 
         </LinearLayout>
 
-
-
-    </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
 
