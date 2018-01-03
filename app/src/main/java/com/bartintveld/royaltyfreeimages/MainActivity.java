@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements
         spotifys = result;
         arrayAdapter = new PictureAdapter(this, spotifys);
         listView.setAdapter(arrayAdapter);
-        textView.setText(editText.getText() + " returned " + spotifys.size() + " results");
+        textView.setText(editText.getText() + " " + getString(R.string.returned) + " " + spotifys.size() + " " + getString(R.string.results));
         arrayAdapter.notifyDataSetChanged();
     }
 

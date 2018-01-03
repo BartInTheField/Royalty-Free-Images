@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Royalty Free Images</string>
+    <string name="info_title">Royalty Free Images Informatie</string>
+    <string name="info_text">In deze app kan je zoeken naar royalty vrije afbeelding door in te typen waar je naar zoekt.\n \n
+    Om de afbeeldingen op te slaan: houd de afbeelding ingedrukt en klik op opslaan\n \n
+        Afbeeldingen zijn van Pixabay \n \n
+    App gemaakt door Bart in t Veld. \n \n
+        Voel je vrij om te doneren en ik zorg dat er meer apps aankomen(◕‿◕)"</string>
+    <string name="title_activity_detailed">DetailedActivity</string>
+    <string name="negative">Annuleer</string>
+    <string name="neutral">Pixabay</string>
+    <string name="positive">Doneer</string>
+    <string name="donate_link">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XAHBQX4Y98CFC</string>
+
+    <string name="bart_easter">Bartaveld</string>
+    <string name="hint">Type tags om te zoeken..</string>
+    <string name="save">Opslaan</string>
+    <string name="saved">opgeslagen</string>
+    <string name="image">Afbeelding</string>
+    <string name="creator">Maker</string>
+    <string name="returned">geeft</string>
+    <string name="results">resultaten</string>
+</resources>

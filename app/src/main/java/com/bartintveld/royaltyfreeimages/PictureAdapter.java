@@ -38,7 +38,7 @@ public class PictureAdapter extends ArrayAdapter<Picture>{
         // Vul de NAAM en CREATOR
         String n = picture.getpictureName();
         name.setText(n);
-        String c = "Creator: " + picture.getcreator();
+        String c = getContext().getResources().getString(R.string.creator) + ": " + picture.getcreator();
         creator.setText(c);
 
         Picasso.with(getContext()).load(picture.getImage_thumb_url()).into(imageView);

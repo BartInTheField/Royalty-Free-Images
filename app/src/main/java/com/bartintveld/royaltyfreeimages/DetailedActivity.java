@@ -119,7 +119,7 @@ public class DetailedActivity extends AppCompatActivity {
             out.close();
 
             //Letting user know saving worked
-            Toast.makeText(getApplicationContext(), "Image: "+ nameView.getText() + " saved" ,
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.image) + ": "+ nameView.getText() + " " + getResources().getString(R.string.saved) ,
                     Toast.LENGTH_SHORT).show();
 
             //Letting gallery know of existence image

@@ -85,43 +85,46 @@ public class PictureModel extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
 
-        try {
-            //Top level object
-            JSONObject jsonObject = new JSONObject(result);
+        if (result != null){
+            if (!result.equals("")){
+                try {
+                    //Top level object
+                    JSONObject jsonObject = new JSONObject(result);
 
-            // Getting all albums and start looping
-            JSONArray hits = jsonObject.optJSONArray("hits");
+                    // Getting all albums and start looping
+                    JSONArray hits = jsonObject.optJSONArray("hits");
 
-            ArrayList<Picture> pictures = new ArrayList<>();
+                    ArrayList<Picture> pictures = new ArrayList<>();
 
-            for (int idx = 0; idx < hits.length(); idx++) {
+                    for (int idx = 0; idx < hits.length(); idx++) {
 
-                //Array level objects and albums
-                JSONObject hit = hits.optJSONObject(idx);
+                        //Array level objects and albums
+                        JSONObject hit = hits.optJSONObject(idx);
 
-                // Get albumName, albumID
-                String pictureName = hit.optString("tags");
-                String creator = hit.optString("user");
+                        // Get albumName, albumID
+                        String pictureName = hit.optString("tags");
+                        String creator = hit.optString("user");
 
-                //Get image urls.
-                String imageThumbURL = hit.optString("previewURL");
-                String imageURL = hit.optString("webformatURL");
+                        //Get image urls.
+                        String imageThumbURL = hit.optString("previewURL");
+                        String imageURL = hit.optString("webformatURL");
 
-                //Create new Picture
-                Picture s = new Picture(pictureName, imageURL, imageThumbURL, creator);
+                        //Create new Picture
+                        Picture s = new Picture(pictureName, imageURL, imageThumbURL, creator);
 
-                //Add SpotifyAlbum in list
-                pictures.add(s);
+                        //Add SpotifyAlbum in list
+                        pictures.add(s);
 
 
+                    }
+                    //Callback
+                    listener.pictureAvailable(pictures);
+                    } catch (JSONException ex) {
+                        Log.e("JSONEXEXECPTION", "onPostExecute JSONException " + ex.getLocalizedMessage());
+                    }
             }
-            //Callback
-            listener.pictureAvailable(pictures);
-        } catch (JSONException ex) {
-            Log.e("JSONEXEXECPTION", "onPostExecute JSONException " + ex.getLocalizedMessage());
+
         }
-
-
     }
 
     //

@@ -15,4 +15,10 @@
 
     <string name="bart_easter">Bartaveld</string>
     <string name="hint">Type tags for image search..</string>
+    <string name="save">Save</string>
+    <string name="saved">saved</string>
+    <string name="image">Image</string>
+    <string name="creator">Creator</string>
+    <string name="returned">returned</string>
+    <string name="results">results</string>
 </resources>
