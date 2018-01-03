@@ -53,8 +53,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_height="56dp"
             android:layout_weight="8"
             android:background="@color/colorPrimaryLight"
             android:elevation="4dp"
@@ -63,6 +62,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <LinearLayout
@@ -92,22 +92,23 @@
                     android:layout_gravity="center"
                     android:layout_weight="8"
                     android:backgroundTint="@android:color/white"
-                    android:hint="Type tags for image search.."
+                    android:hint="@string/hint"
                     android:imeOptions="actionSearch"
                     android:inputType="textCapWords"
                     android:lines="1"
                     android:textColor="@android:color/white"
+                    android:textColorHint="@color/hinttext"
                     android:textCursorDrawable="@null" />
 
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="@drawable/ic_search"
+                    android:contextClickable="false"
                     android:onClick="searchArtist"
-                    android:padding="8dp"
                     android:textColor="@android:color/white" />
             </LinearLayout>
 

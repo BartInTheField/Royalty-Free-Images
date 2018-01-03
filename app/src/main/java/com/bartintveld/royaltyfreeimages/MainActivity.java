@@ -3,6 +3,7 @@ package com.bartintveld.royaltyfreeimages;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -123,7 +124,14 @@ public class MainActivity extends AppCompatActivity implements
             frameLayout.addView(easterImage);
         }
 
+        else if (editText.getText().toString().equals("")) {
+            editText.setHintTextColor(getResources().getColor(R.color.failure));
+            Vibrator vibrator = (Vibrator) getSystemService(this.VIBRATOR_SERVICE);
+            vibrator.vibrate(500);
+        }
+
         else {
+            editText.setHintTextColor(getResources().getColor(R.color.hinttext));
             //Search for artist and replace " " with "+"
             String artist = editText.getText().toString();
             String newArtist = "";

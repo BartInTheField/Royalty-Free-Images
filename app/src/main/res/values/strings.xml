@@ -14,4 +14,5 @@
     <string name="donate_link">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XAHBQX4Y98CFC</string>
 
     <string name="bart_easter">Bartaveld</string>
+    <string name="hint">Type tags for image search..</string>
 </resources>
